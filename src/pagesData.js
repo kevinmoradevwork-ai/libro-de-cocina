@@ -49,7 +49,8 @@ export const bookContent = {
     bakingTime: "¡Y tiempo de horneado: 9 meses!",
     bigReveal: "¡VAS A SER ABUELITA!",
     babyNote: "¡Hola Abuelita! Ya tengo muchas ganas de abrazarte y llenarte de besos ♥",
-    ultrasoundCaption: "Nuestra mayor bendición en camino"
+    ultrasoundCaption: "Nuestra mayor bendición en camino",
+    image: "/ultrasonido.jpg" // Coloca tu foto real como public/ultrasonido.jpg o haz clic en la foto
   },
   epilogue: {
     title: "El Resultado Perfecto",

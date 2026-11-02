@@ -252,28 +252,18 @@ export class RecipeBook {
             <div class="grandma-reveal-tag">${bookContent.climax.bigReveal}</div>
           </div>
 
-          <!-- Polaroid Photo Frame with Ultrasound -->
+          <!-- Marco Polaroid Vintage con la Foto de Ecografía -->
           <div class="polaroid-wrapper" id="polaroid-card">
             <div class="washi-tape-top"></div>
             <div class="polaroid-inner">
-              <div class="ultrasound-container">
-                <img id="ultrasound-img" src="/ultrasonido-placeholder.svg" alt="Ecografía de tu futuro nieto/a" />
+              <div class="ultrasound-container" id="ultrasound-container" title="Área de fotografía (puedes hacer clic para seleccionar tu foto o guardar public/ultrasonido.jpg)">
+                <input type="file" id="ultrasound-input" accept="image/*" style="display: none;" />
+                <img id="ultrasound-img" src="${bookContent.climax.image || '/ultrasonido.jpg'}" alt="Ecografía de tu futuro nieto/a" onerror="this.onerror=null; this.src='/ultrasonido-placeholder.svg';" />
               </div>
               <div class="polaroid-caption">
                 <p class="caption-handwritten">${bookContent.climax.babyNote}</p>
               </div>
             </div>
-          </div>
-
-          <!-- Controles de personalización rápida en la misma página -->
-          <div class="page-photo-tools">
-            <label class="photo-upload-label" title="Haz clic para subir tu foto de ultrasonido">
-              <input type="file" id="ultrasound-input" accept="image/*" style="display: none;" />
-              <span>📷 Cambiar por foto real</span>
-            </label>
-            <button class="celebrate-btn-mini" id="climax-confetti-btn" title="Lanzar confeti">
-              🎉 ¡Felicidades!
-            </button>
           </div>
 
           <div class="page-number-footer">6</div>
@@ -414,8 +404,16 @@ export class RecipeBook {
   }
 
   attachUltrasoundUploader() {
+    const container = document.getElementById('ultrasound-container');
     const input = document.getElementById('ultrasound-input');
     const img = document.getElementById('ultrasound-img');
+
+    if (container && input) {
+      container.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        input.click();
+      });
+    }
 
     if (input && img) {
       input.addEventListener('change', (e) => {

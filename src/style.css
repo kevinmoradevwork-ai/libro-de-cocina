@@ -873,13 +873,20 @@ html, body {
 
 .ultrasound-container {
   width: 100%;
-  height: 155px;
+  height: 170px;
   background: #000;
   overflow: hidden;
   border: 1px solid #222;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.ultrasound-container:hover {
+  opacity: 0.96;
 }
 
 .ultrasound-container img {
@@ -899,34 +906,6 @@ html, body {
   font-size: 1.15rem;
   color: #1a1a1a;
   line-height: 1.25;
-}
-
-/* Herramientas de foto y confeti */
-.page-photo-tools {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 4px;
-}
-
-.photo-upload-label, .celebrate-btn-mini {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(160, 110, 60, 0.4);
-  padding: 3px 9px;
-  border-radius: 14px;
-  font-family: var(--font-typewriter);
-  font-size: 0.72rem;
-  color: var(--ink-sepia);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-
-.photo-upload-label:hover, .celebrate-btn-mini:hover {
-  background: #fff;
-  border-color: var(--gold-dark);
-  transform: translateY(-1px);
 }
 
 /* ==========================================================================
@@ -1186,7 +1165,7 @@ html, body {
   }
 
   .ultrasound-container {
-    height: 135px;
+    height: 145px;
   }
 
   .baking-time-text {
