@@ -76,7 +76,7 @@ const pageNames = [
   '3: Ingrediente 2',
   '4: Ingrediente 3',
   '5: Ingrediente Secreto',
-  '6: ¡El Clímax!',
+  '6: El Paso Final',
   '7: Dedicatoria',
   'Contraportada'
 ];
